@@ -27,7 +27,7 @@ export default class ListsController {
     window.event.preventDefault()
     let form = window.event.target
     let newList = {
-      listname: form.name.value
+    name: form.name.value
     }
     listsService.addList(newList)
     // @ts-ignore

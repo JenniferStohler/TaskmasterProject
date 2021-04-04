@@ -2,33 +2,32 @@ import { ProxyState } from "../AppState.js"
 import { generateId } from "../Utils/GenerateId.js"
 
 export default class List {
-  constructor(moreLists, id = generateId()) {
-    this.id = id,
-    //this.color = listColor,
-    this.name = moreLists
+  constructor(name, id = generateId()) {
+    this.id = id
+    this.name = name
+    this.color = color
    }
 
 
   get Template() {
     return /*html*/` 
-    <div class="col-md-4">
+    <div class="${this.color} col-md-4">
         <form class="bg-white rounded p-3" onsubmit="app.listsController.addList()">
             <div class="form-group d-flex">
-                    <h3>${this.moreLists}</h3>
-                    <input type="text" name="taskname" id="taskname" class="form-control" placeholder="Add List..."
-                        aria-describedby="helpId" required min="3" max="15">
-                </div>
+                    <h3>${this.name}</h3>
+              <i class="fas fa-dumpster ml-2" onclick="app.listsController.deleteList('${this.id}')" title='delete'></i> 
+            </div>
     
               <div class="p-3">
               <ul>
-                ${this.task}
+                ${this.Task}
               </ul>
               </div>
 <form class="d-flex p-2" onsubmit="app.tasksController.addTask('${this.id}')">
     <input type="text" name="name" id="taskname" class="form-control" placeholder="Tasks"
         aria-describedby="helpId">
     <button type="submit" class="btn btn-success" title='add task'>Add Task!</button>
-    <ul><input type ="checkbox" aria-label="Checkbox for following text input" class="mr-3" id="listCheckBox" name="listCheckBox" onchange="app.tasksController.toggleTask('${this.id}')"${this.complete ? "Checked" : !"Checked"} titel='Check when completed'>${this.taskname} <i class="fas fa-times ml-2 text-danger" onclick="app.tasksController.deleteTask('{this.id}')" title='Delete Task'></i></ul>
+    <ul><input type ="checkbox" aria-label="Checkbox for following text input" class="mr-3" id="listCheckBox" name="listCheckBox" onchange="app.tasksController.toggleTask('${this.id}')"${this.complete ? "Checked" : !"Checked"} titel='Check when completed'>${this.taskname} <i class="fas fa-times ml-2 text-danger" onclick="app.tasksController.deleteTask('${this.id}')" title='Delete Task'></i></ul>
 </form>
 </div>
 </div>`
@@ -36,9 +35,9 @@ export default class List {
   }
 
   get Tasks() {
-    let task = ProxyState.tasks.filter(li => li.listId === this.id)
+    let task = ProxyState.tasks.filter(ti => ti.listId === this.id)
     let template = ''
-    task.forEach(li => template += li.Template)
+    task.forEach(ti => template += ti.Template)
     return template
   }
 

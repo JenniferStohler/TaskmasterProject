@@ -17,7 +17,7 @@
 <body>
     <header>
         <nav class="navbar navbar-dark navbar-expand bg-dark text-light text-center">
-            
+            <img src="https://images.unsplash.com/photo-1600081730398-99e41548d645?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80" width="45" height="60" alt="" loading="lazy">
             <h1 class="ml-5">KINKY JUSTICE TASK LOG!!!!</h1>
         </nav>
     </header>
@@ -25,21 +25,34 @@
         
         <div class="row my-3">
             <div class="col-md-4">
-                <form class="bg-white rounded p-3" onsubmit="app.listsController.addList()">
+                <form class="bg-white rounded p-3" onsubmit="app.listsController.addList(name)">
                     <div class="form-group d-flex">
                         <label for="moreLists"></label>
                     </div>
-                    <input type="text" name="moreLists" id="moreLists" class="form-control" placeholder="Add List Name..."
+                    <input type="text" name="name" id="addNewList" class="form-control" placeholder="Add List Name..."
                     aria-describedby="helpId" required min="3" max="15">
+
+                    <div class="ml-3">
+                        <label for="color">List Color</label>
+                        <select class="custom-select" id="color" aria-label="color select" required>
+                            <option value='bg-primary' class="text-primary">Blue</option>
+                            <option value='bg-secondary' class="text-secondary">Pink</option>
+                            <option value='bg-danger' class="text-danger">Red</option>
+                            <option value='bg-success' class="text-success">Green</option>
+                            <option value='bg-warning' class="text-warning">Orange</option>
+                        </select>
+                    </div>
+                    
                     <div class="ml-3 d-flex align-items-end">
                         <button type="submit" class="btn btn-success" title='add list'>Add List!</i></button>
                     </div>
+                  
                 </form>
             </div>
         </div>
         <div class="row bg-white p-5 rounded" id="app">
         </div>
-
+        
     </main>
     <footer class="container-fluid bg-dark text-light">
         <div class="row text-center">
