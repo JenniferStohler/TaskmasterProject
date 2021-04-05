@@ -2,7 +2,7 @@ import { ProxyState } from "../AppState.js"
 import { generateId } from "../Utils/GenerateId.js"
 
 export default class List {
-  constructor(name, id = generateId()) {
+  constructor(name, color, id = generateId()) {
     this.id = id
     this.name = name
     this.color = color
