@@ -11,7 +11,7 @@ function _draw() {
     template += '<div class="col text-center"><p><em>no lists</em><p></div>'
   }
   lists.forEach(li => template += li.Template)
-  document.getElementById("app").innerHTML = template
+  document.getElementById("lists").innerHTML = template
 } 
 
 //Public
@@ -24,7 +24,7 @@ export default class ListsController {
   }
 
   addList() {
-    window.event.preventDefault()
+    window.event.preventDefault();
     let form = window.event.target
     let newList = {
     name: form.name.value

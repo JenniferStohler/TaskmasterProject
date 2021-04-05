@@ -27,7 +27,7 @@
             <div class="col-md-4">
                 <form class="bg-white rounded p-3" onsubmit="app.listsController.addList(name)">
                     <div class="form-group d-flex">
-                        <label for="moreLists"></label>
+                        <label for="moreLists">List Name</label>
                     </div>
                     <input type="text" name="name" id="addNewList" class="form-control" placeholder="Add List Name..."
                     aria-describedby="helpId" required min="3" max="15">
@@ -50,7 +50,8 @@
                 </form>
             </div>
         </div>
-        <div class="row bg-white p-5 rounded" id="app">
+        <div class="row bg-white p-5 rounded" id="lists">
+
         </div>
         
     </main>
@@ -61,7 +62,10 @@
             </div>
         </div>
     </footer>
-    <script src="app/main.js" type="module"></script>
+    <div id = "app">
+
+        <script src="app/main.js" type="module"></script>
+    </div>
 </body>
 
 </html>

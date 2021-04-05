@@ -8,7 +8,7 @@ export default class TasksController {
     window.event.preventDefault()
     let form = window.event.target
     let rawTask = {
-      name: form.taskName.value,
+      name: form.name.value,
       listId: listId
     }
     tasksService.addTask(rawTask)

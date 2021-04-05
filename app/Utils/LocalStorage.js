@@ -12,9 +12,9 @@ export function loadState() {
   let data = JSON.parse(localStorage.getItem('taskmaster'))
   if (data) {
     // the boxes that hold content
-    ProxyState.tasks = data.tasks.map(task => new Task(task.taskName, task.id))
+    ProxyState.tasks = data.tasks.map(task => new Task(task.name, task.id , task.listId, task.checked))
     ;
     // the content inside the box
-    ProxyState.lists = data.lists.map(list => new List(list.name, list.taskId, list.id));
+    ProxyState.lists = data.lists.map(list => new List(list.name, list.color, list.id));
   }
 }
