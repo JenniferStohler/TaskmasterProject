@@ -4,7 +4,6 @@ export default class Task {
   constructor(taskName, listId, id = generateId()) {
     this.id = id
     this.name = taskName
-    //this.color
     this.listId = listId
     this.checked = checked
   }
