@@ -13,12 +13,12 @@ export default class List {
     return /*html*/`
     <div class="col-md-4 mt-5">
             <div class="list-card shadow bg-yellow">
-                <div class="${this.color} p-2 d-flex justify-content-between">
+                <div class="${this.color} p-4 d-flex justify-content-between">
                     <div class="d-flex flex-column">
-                        <h3 class="mt-2 text-dark">${this.name}</h3>
+                        <h3 class="mt-4 text-dark">${this.name}</h3>
                         <div class="text-dark">${this.incompleteTasks} / ${this.allTasks} remaining</div>
                     </div>
-                    <i class="fas fa-dumpster ml-2" onclick="app.listsController.deleteList('${this.id}')" title='delete'></i>
+                    <i class="fas fa-dumpster ml-3" onclick="app.listsController.deleteList('${this.id}')" title='delete'></i>
                 </div>
                 <div class="">
                     <ul>
@@ -26,9 +26,9 @@ export default class List {
                     </ul>
                 </div>
                 <form class="d-flex p-2" onsubmit="app.tasksController.addTask('${this.id}')">
-                    <input type="text" name="name" id="name" class="form-control" placeholder="Add Task..."
+                    <input type="text" name="name" id="name" class="form-control" placeholder="Add Task Here..."
                         aria-describedby="helpId" required minlength="3" maxlength="50">
-                    <button type="submit" class="btn btn-success ml-1" title='add task'><i class="fas fa-plus-circle"></i></button>
+                    <button type="submit" class="btn btn-success ml-2" title='add task here'><i class="fas fa-plus-circle"></i></button>
                 </form>
             </div>
         </div>
