@@ -29,7 +29,7 @@ class TasksService {
   }
   addTask(rawTask) {
     ProxyState.tasks.push(new Task(rawTask.name, rawTask.listId))
-    saveState(),
+    saveState()
     ProxyState.tasks = ProxyState.tasks
   }
 tasksCheckBox(bool, id) {
