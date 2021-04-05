@@ -28,6 +28,7 @@ class TasksService {
 
   }
   addTask(rawTask) {
+    console.log(rawTask)
     ProxyState.tasks.push(new Task(rawTask.name, rawTask.listId))
     saveState()
     ProxyState.tasks = ProxyState.tasks

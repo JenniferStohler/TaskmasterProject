@@ -12,9 +12,9 @@ export function loadState() {
   let data = JSON.parse(localStorage.getItem('taskmasterweek3'))
   if (data) {
     
-    ProxyState.tasks = data.tasks.map(task => new Task(task.id, task.name , task.listId, task.checked))
-    ;
+    ProxyState.tasks = data.tasks.map(task => new Task(task.name, task.listId, task.id, task.checked));
     
-    ProxyState.lists = data.lists.map(list => new List(list.name, list.id, list.color));
+    
+    ProxyState.lists = data.lists.map(list => new List(list.name, list.color, list.id));
   }
 }

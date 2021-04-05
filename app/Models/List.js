@@ -3,9 +3,9 @@ import { generateId } from "../Utils/GenerateId.js"
 
 export default class List {
   constructor(name, color, id = generateId()) {
-    this.id = id
-    this.color = color
-    this.name = name
+      this.name = name
+      this.color = color
+      this.id = id
    }
 
 
@@ -28,6 +28,7 @@ export default class List {
                 <form class="d-flex p-2" onsubmit="app.tasksController.addTask('${this.id}')">
                     <input type="text" name="name" id="name" class="form-control" placeholder="Add Task Here..."
                         aria-describedby="helpId" required minlength="3" maxlength="50">
+                        
                     <button type="submit" class="btn btn-success ml-2" title='add task here'><i class="fas fa-plus-circle"></i></button>
                 </form>
             </div>
