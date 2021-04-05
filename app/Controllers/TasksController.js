@@ -20,4 +20,8 @@ export default class TasksController {
     tasksService.deleteTask(id)
   }
 
+  tasksCheckBox(bool, id){
+    tasksService.tasksCheckBox(bool, id)
+  }
+
 }

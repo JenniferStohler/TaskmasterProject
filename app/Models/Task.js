@@ -10,8 +10,8 @@ export default class Task {
   
 
   get Template() {
-    return   `<div class ="col-12 my-5 align-center"><input type="checkbox" aria-label="taskCheckbox" class="mr-3" id="taskCBox" 
-    onclick="app.tasksController.taskCBox('${this.checked}', '${this.id}')" ${this.checked ? 'checked' : ''}>
+    return   `<div class ="col-12 my-5 align-center"><input type="checkbox" aria-label="tasksCheckBox" class="mr-3" id="tasksCheckBox" 
+    onclick="app.tasksController.tasksCheckBox('${this.checked}', '${this.id}')" ${this.checked ? 'checked' : ''}>
     ${this.name} <i class="fas fa-times ml-3 text-danger" title='delete'
     onclick="app.tasksController.deleteTask('${this.id}')"></i></div>`
   }

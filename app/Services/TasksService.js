@@ -32,8 +32,8 @@ class TasksService {
     saveState()
     ProxyState.tasks = ProxyState.tasks
   }
-taskCBox(boolean, id) {
-  ProxyState.tasks.find(ti => ti.id === id).checked = boolean
+tasksCheckBox(bool, id) {
+  ProxyState.tasks.find(ti => ti.id === id).checked = bool
   saveState()
   ProxyState.tasks = ProxyState.tasks
 }
